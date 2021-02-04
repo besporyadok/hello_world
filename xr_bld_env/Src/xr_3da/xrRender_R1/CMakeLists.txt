@@ -1,0 +1,21 @@
+project(xrRender_R1)
+
+add_dir("${PROJECT_SOURCE_DIR}")
+exclude_from_build("${PROJECT_SOURCE_DIR}/Blender_LmBmmD.cpp")
+exclude_from_build("${PROJECT_SOURCE_DIR}/FLightsController.cpp")
+exclude_from_build("${PROJECT_SOURCE_DIR}/FStaticRender_DetailTexturing.cpp")
+exclude_from_build("${PROJECT_SOURCE_DIR}/FStaticRender_Loader_Trees.cpp")
+exclude_from_build("${PROJECT_SOURCE_DIR}/FStaticRender_R_Dump.cpp")
+exclude_from_build("${PROJECT_SOURCE_DIR}/FStaticRender_SceneGraph.cpp")
+exclude_from_build("${PROJECT_SOURCE_DIR}/FStaticRender_Volume.cpp")
+exclude_from_build("${PROJECT_SOURCE_DIR}/LightProjector_Cache.cpp")
+exclude_from_build("${PROJECT_SOURCE_DIR}/ResourceManager.cpp")
+exclude_from_build("${PROJECT_SOURCE_DIR}/ResourceManager_Loader.cpp")
+exclude_from_build("${PROJECT_SOURCE_DIR}/ResourceManager_Resources.cpp")
+exclude_from_build("${PROJECT_SOURCE_DIR}/ResourceManager_Scripting.cpp")
+exclude_from_build("${PROJECT_SOURCE_DIR}/psvisual.cpp")
+
+add_library(${PROJECT_NAME} SHARED ${${PROJECT_NAME}__SOURCES})
+
+target_compile_definitions(${PROJECT_NAME} PRIVATE XRRENDER_R1_EXPORTS)
+target_precompile_headers(${PROJECT_NAME} PRIVATE $<$<COMPILE_LANGUAGE:CXX>:stdafx.h>)

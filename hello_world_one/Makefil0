@@ -1,0 +1,39 @@
+# Define in bat
+# TOOL = K:\PRJ\Tool
+
+CL = $(TOOL)\Bin\cl.exe
+LINK = $(TOOL)\Bin\link.exe
+
+# Add '/Fo' CL option in future :-) 
+# INTER = $(TOOL:Tool=Src)\objs\
+
+!IF "$(DBG)" == "1"
+CLDBGFLG = /Zi
+LNKDBGFLG = /DEBUG
+!ELSE
+CLDBGFLG =
+LNKDBGFLG =
+!ENDIF
+
+INC = /I$(TOOL)\Inc\sal \
+	  /I$(TOOL)\Inc\crt \
+	  /I$(TOOL)\Inc\w32 \
+	  /I$(TOOL)\Inc\d3d
+	  
+LIBS = User32.lib D3D9.lib D3DX9.lib
+
+CLFLAGS = /DUNICODE $(CLDBGFLG) /Zc:sizedDealloc- $(INC) /c /nologo /Wv:18
+LNKFLAGS = /LIBPATH:$(TOOL)\Lib $(LNKDBGFLG) /NOLOGO /OUT:PetPrj.exe
+
+SRC = Debug.cpp \
+	  Engine.cpp \
+	  Engine_msg.cpp \
+	  Reader.cpp \
+	  Lab.cpp \
+	  EP.cpp
+	  
+OBJ = $(SRC:.cpp=.obj)
+
+all:
+	$(CL) $(CLFLAGS) $(SRC)
+	$(LINK) $(LNKFLAGS) $(OBJ) $(LIBS)

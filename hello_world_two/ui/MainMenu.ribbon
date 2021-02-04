@@ -1,0 +1,39 @@
+<Application xmlns="http://schemas.microsoft.com/windows/2009/Ribbon">
+	<Application.Commands>
+		<Command Name="cmdAppMenu"
+				 Symbol="ID_APP_MENU"
+				 Id="25000"/>
+		<Command Name="cmdExit"
+				 LabelTitle="Exit"/>
+		<Command Name="tabService"
+				 LabelTitle="Service"/>
+		<Command Name="tabServiceG1"/>
+		<Command Name="cmdAbout"
+				 LabelTitle="About..."/>
+	</Application.Commands>
+	<Application.Views>
+		<Ribbon>
+			<Ribbon.ApplicationMenu>
+				<ApplicationMenu CommandName="cmdAppMenu">
+					<MenuGroup>
+						<Button CommandName="cmdExit"></Button>
+					</MenuGroup>
+				</ApplicationMenu>
+			</Ribbon.ApplicationMenu>
+			<Ribbon.QuickAccessToolbar>
+				<QuickAccessToolbar>
+					<QuickAccessToolbar.ApplicationDefaults>
+						<Button CommandName="cmdExit"></Button>
+					</QuickAccessToolbar.ApplicationDefaults>
+				</QuickAccessToolbar>
+			</Ribbon.QuickAccessToolbar>
+			<Ribbon.Tabs>
+				<Tab CommandName="tabService">
+					<Group CommandName="tabServiceG1" SizeDefinition="OneButton">
+						<Button CommandName="cmdAbout"></Button>
+					</Group>
+				</Tab>
+			</Ribbon.Tabs>
+		</Ribbon>
+	</Application.Views>
+</Application>
