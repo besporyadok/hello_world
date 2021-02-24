@@ -8,4 +8,4 @@ Additional information present in ReadMe.txt files in respective directorie's.
 - Hello world round three [ReadMe](hello_world_three/ReadMe.txt)
 
 ## Example
-![Screenshot #1](hello_world_four/sshot.png)
+![Screenshot #1](hello_world_four/sshot.jpg)
