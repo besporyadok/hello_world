@@ -55,7 +55,7 @@ def run():
     for item in files.iter():
         if item.tag == 'File':
             fname = item.get('RelativePath') # Ignore case & dot in path (xrGame hello xD)?
-            exclude = item.get('ExcludedFromBuild') # Whata fuck maza fuck ?!
+            exclude = item.get('ExcludedFromBuild') # What ?!
             ext = os.path.splitext(fname)[1]
             
             if (ext == '.cpp' or ext == '.c' or ext == '.cxx') and (exclude != 'TRUE'):
